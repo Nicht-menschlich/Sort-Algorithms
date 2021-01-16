@@ -1,26 +1,10 @@
 import time as t
 from Utils.Utils import Utils as u
-#This is just a method that animates the text and makes a new line after
 
-sortList = u.askForIntInput()
-#first the input of the list to be sorted happens
-u.printProg(0.05, "You will be asked to insert numbers")
-t.sleep(0.75)
-u.printProg(0.05, "There it is possible to insert them seperately or in one piece seperating them with a ','!")
-t.sleep(0.75)
-u.printProg(0.05, "Have fun with my program!")
-t.sleep(0.5)
 
-u.printProg(0.05, "Your input is ready to sort now. Below you can see it")
-u.printProg(0.05, str(sortList))
-t.sleep(0.5)
-print("Work in Progress", end='')
-t.sleep(0.5)
-printProg(0.3, "..........")
-t.sleep(0.5)
-#here the actual sorting starts
+sortList = u.askForIntInput(u)
 isSorted = False
-while isSorted == False:
+while not isSorted:
     isSorted = True #sets isSorted to true. It will be set to false as soon as one item is on the wrong position
     for i in range(len(sortList)-1):#goes through the list that is to sort 
         if sortList[i] > sortList[i+1]:
@@ -31,4 +15,4 @@ while isSorted == False:
             sortList[i+1] = item1
             isSorted = False    #tells the algorithm that it might still be unsorted
 u.printProg(0.05, "Your List has been sorted with Bubble sort. You're welcome")
-i.printProg(0.05, str(sortList))
+u.printProg(0.05, str(sortList))
